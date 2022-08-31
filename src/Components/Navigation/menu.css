@@ -10,19 +10,14 @@
     border-radius: 12px 12px 12px 12px;
 }
 .navbar{
-    background-color: rgba(25, 25, 26, 0.842);
+    background-color: black;
 }
 
 .button3{
-    border-color: rgb(230, 163, 19);
+    border-color: rgba(248, 215, 69, 0.863);
     border-radius: 8px;
-    background-color: white;
+    background-color: rgba(248, 215, 69, 0.863);
     width: 150px;
     height: 40px;
-    color: rgb(230, 163, 19);
-}
-
-.button3:hover{
-    background-color: rgb(230, 163, 19);
     color: white;
 }
