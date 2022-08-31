@@ -5,7 +5,6 @@ import { Pricing } from "../Pricing/Pricing";
 import photo from "./image/banner.jpg";
 import "./home.css";
 
-
 export function Home() {
     return (
         <div id="top">
