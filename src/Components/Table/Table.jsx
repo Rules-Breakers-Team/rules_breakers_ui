@@ -8,6 +8,8 @@ const Table = (props) => {
     const {children} = props;
     const [data, setData] = useState([]);
     const [type, setType] = useState([]);
+    const [filter, setFilter] = useState("")
+
     useEffect(() => {
         const data = instance.get("rooms?page=0&page_size=2");
         data.then((res) => {
@@ -24,12 +26,16 @@ const Table = (props) => {
                 console.log(err);
             })
     })
+    const updateRoom = () => {
+        const data = {
 
+        }
+    }
     return(
         <>
-            <Menu button="Se déconnecter"/>
+            <Menu button="Se déconnecter" label1="Réservations"/>
             <div className="mt-5 mb-5">
-                <h2>Liste des chambre</h2>
+                <h2>Liste des chambres</h2>
             </div>
             <div className="container" >
             <div className="btn-toolbar mb-2 mb-md-0 my-2" id="table-action">
@@ -38,7 +44,8 @@ const Table = (props) => {
                     <button type="button" className="btn btn-sm btn-outline-secondary">Share</button>
                     <button type="button" className="btn btn-sm btn-outline-secondary">Export</button>
                 </div>
-                <select name="" id="" className="btn btn-sm btn-outline-secondary">
+                <select className="btn btn-sm btn-outline-secondary" >
+                    <option value="titre">Tout</option>
                     <option value="titre">Chambres libre</option>
                     <option value="auteur">Chambres occupés</option>
                     {
@@ -74,6 +81,7 @@ const Table = (props) => {
                     }
                 </tbody>
             </table>
+            <button className="mt-5 btn btn-success rounded-3">Ajouter</button>
             <Pagination />
            </div>
         </>
