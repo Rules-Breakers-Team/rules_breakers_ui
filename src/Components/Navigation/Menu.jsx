@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./menu.css";
-import logo from "./image/logo.jpg";
+import logo from "./image/logo.png";
 import "../../Style/bootstrap/bootstrap.css"
 
 
@@ -26,7 +26,7 @@ export function Menu() {
           </ul>
         </div>
         <div class="text-end">
-          <button type="button" class="btn btn-danger my-2" onClick={()=> navigate('/login')}>Se connecter</button>
+          <button type="button" className="button2" onClick={()=> navigate('/login')}>Se connecter</button>
         </div>
       </div>
     </div>

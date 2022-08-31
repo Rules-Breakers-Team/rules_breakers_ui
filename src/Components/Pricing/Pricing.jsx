@@ -20,7 +20,7 @@ export function Pricing() {
                     <li>250 000 Ar</li>
                     <li>100 000 Ar</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Reserver</button>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Reserver</button>
                 </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@ export function Pricing() {
                         <li>250 000 Ar</li>
                         <li>100 000 Ar</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Reserver</button>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Reserver</button>
                 </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@ export function Pricing() {
                         <li>250 000 Ar</li>
                         <li>100 000 Ar</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Reserver</button>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-warning">Reserver</button>
                 </div>
                 </div>
             </div>

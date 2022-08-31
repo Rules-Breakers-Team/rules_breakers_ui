@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,800');
-body {
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
-}
+
 .body {
 	display: flex;
 	justify-content: center;
@@ -56,10 +52,10 @@ a {
 }
 
 .button1 {
-	border-radius: 20px;
+	border-radius: 8px;
 	margin-top: 1%;
-	border: 1px solid rgba(255, 224, 49, 0.959);
-	background-color: rgba(255, 224, 49, 0.959);
+	border: 1px solid #01197b;
+	background-color: #01197b;
 	color: #FFFFFF;
 	font-size: 10px;
 	font-weight: bold;
@@ -69,7 +65,20 @@ a {
 	transition: transform 80ms ease-in;
 	cursor: pointer;
 }
-
+.button2 {
+	border-radius: 20px;
+	margin-top: 1%;
+	border: 1px solid rgba(0, 0, 0, 0.959);
+	background-color: transparent;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	cursor: pointer;
+}
 .button:active {
 	transform: scale(0.95);
 }
