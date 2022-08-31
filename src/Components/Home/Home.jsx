@@ -4,7 +4,6 @@ import { Menu } from "../Navigation/Menu";
 import { Pricing } from "../Pricing/Pricing";
 import photo from "./image/banner.jpg";
 import "./home.css";
-import { BookingForm } from "../Booking/BookingForm";
 
 
 export function Home() {
