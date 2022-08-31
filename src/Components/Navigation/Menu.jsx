@@ -1,12 +1,12 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./menu.css";
 import logo from "./image/logo.png";
 import "../../Style/bootstrap/bootstrap.css"
 
 
 export function Menu(props) {
-  const {button, label1, label2} = props;
+  const {button, label1, label2, link1} = props;
   const navigate = useNavigate()
     return(
         <>
@@ -21,7 +21,7 @@ export function Menu(props) {
         <div className="justify-content-lg-start">
           <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="#offres" className="nav-link text-white" to="/home"> {label1}</a>
+              <Link to={link1}><a href="#offres" className="nav-link text-white" to="/home"> {label1}</a></Link>
             </li>
             <li>
               <a href="#apropos" className="nav-link text-white" to="/history"> {label2}</a>

@@ -1,7 +1,7 @@
 import InPut from "../Input/Input";
 import SignUp from "./SignUp";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Provider.css';
 import { BASE_URL } from "../../BASE_URL";
 import 'react-toastify/dist/ReactToastify.css';
@@ -58,8 +58,8 @@ return(
                 closeButton={true}
                 />
 				<p>Pour les nouveaux , <a href="#" className="retour" color="yellow" onClick={()=>setChoose(true)} ><b> S'enregistrer</b></a></p>
-				<button onClick={()=>getData()} className='button1' >Se connecter</button><br />
-                <em><a className="retour" onClick={()=>navigate('/')} ><i className="fa fa-arrow-left"></i>  RETOUR </a> à la page principal</em><br/>
+				<Link to="/room"><button /*onClick={()=>getData()}*/ className='button1' >Se connecter</button><br /></Link>
+                <em><a className="retour" /*onClick={()=>navigate('/')}*/ ><i className="fa fa-arrow-left"></i>  RETOUR </a> à la page principal</em><br/>
 			</form>
 		</div>
 		<div className="overlay-container">

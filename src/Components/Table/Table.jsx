@@ -33,7 +33,7 @@ const Table = (props) => {
     }
     return(
         <>
-            <Menu button="Se déconnecter" label1="Réservations"/>
+            <Menu button="Se déconnecter" label1="Réservations" link1="/booking"/>
             <div className="mt-5 mb-5">
                 <h2>Liste des chambres</h2>
             </div>
