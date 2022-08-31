@@ -4,7 +4,6 @@ import "../../Style/bootstrap/bootstrap.css"
 import instance from "../Config/axios";
 
 export function Pricing() {
-
     const [types, setTypes] = useState([]);
 
     useEffect(()=>{
