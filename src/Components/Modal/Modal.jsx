@@ -82,7 +82,6 @@ export default function Modal({ show , closeModalHandler}){
                     min={dateStart} 
                     placeholder="Date de reservation" 
                     onChange={(e)=>setDateEnd(e.target.value)}/>
-
                 <button className="button1" onClick={()=>postBooking()} >Réserver</button>
                 </form>
 

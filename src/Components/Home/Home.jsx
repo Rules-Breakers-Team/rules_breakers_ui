@@ -7,6 +7,7 @@ import "./home.css";
 import image from './image/chambre.jpg'
 import Banner from "../Banner/Banner";
 
+
 export function Home() {
     return (
         <div id="top">
