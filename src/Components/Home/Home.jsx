@@ -27,12 +27,16 @@ export function Home() {
                     </div>
                     <div className="col-md-6 col-sm-12 text-center">
                         <p className="imageText">
-Notre hotel NHOTEL qui se trouve au Sud d'Ivandry , vous offre un large choix et de chambre suivant les règles de la santé .
+                            Notre hotel NHOTEL qui se trouve au Sud d'Ivandry 
+                            , vous offre un large choix et de chambre suivant les 
+                            règles de la santé .
                         </p>
                     </div>
                     <div className="col-md-6 col-sm-15 text-center">
                     <p className="imageText">
-La reservation de chambre se fait en-dessus et disponible 24h/24 et 7j/7 , avec un cadre très agréable et faite pour vos goûts de confort .
+                            La reservation de chambre se fait en-dessus et disponible 
+                            24h/24 et 7j/7 , avec un cadre très agréable et faite pour 
+                            vos goûts de confort .
                     </p>
                     </div>
                     <div className="col-md-6 col-sm-12 ">

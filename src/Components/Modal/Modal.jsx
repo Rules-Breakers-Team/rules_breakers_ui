@@ -10,7 +10,8 @@ export default function Modal({ show , closeModalHandler}){
      }; 
     const [nom,setNom] = useState();
     const [numero,setNumero] = useState();
-    const [date,setDate] = useState();
+    const [dateStart,setDateStart] = useState();
+    const [dateEnd, setDateEnd] = useState();
 
     const error =()=>{
         toast.error("Reservation non effectuée")
@@ -20,9 +21,11 @@ export default function Modal({ show , closeModalHandler}){
     }
     const data =   {
             client: nom,
-            phone_number: numero,
-            booking_date: date ,
-            room_type: 1
+            phoneNumber: numero,
+            bookingDate: new Date().toISOString().slice(0,10),
+            bookingStart: dateStart ,
+            bookingEnd: dateEnd,
+            roomType: 1
           }
     const postBooking = async() => {
         const promise = instance.post("booking", [data]);
@@ -49,20 +52,36 @@ export default function Modal({ show , closeModalHandler}){
       >
         <div className="modal-header" onClick={closeModalHandler}>
             <b className="add" ></b>
-            <span className="close-modal-btn"onClick={closeModalHandler} >X</span>
+            <h2 className='text-light'>Réserver une chambre</h2>
+            <span className="close-modal-btn"onClick={closeModalHandler}>X</span>
         </div> 
         <div className="modal-content">
             <div className="modal-body">
             <form onSubmit={handleSubmit}>
 
                 <label htmlFor="">Nom du client : </label>
-                <input className='input' type="text"placeholder="Nom" onChange={(e)=>setNom(e.target.value)}/>
+                <input className='input' 
+                    type="text"placeholder="Nom" 
+                    onChange={(e)=>setNom(e.target.value)}/>
 
                 <label htmlFor="">Numero de telephone : </label>
-                <input className='input' type="text" placeholder="+261..." onChange={(e)=>setNumero(e.target.value)}/>
+                <input className='input' 
+                    type="text" placeholder="+261..." 
+                    onChange={(e)=>setNumero(e.target.value)}/>
                 
-                <label htmlFor="">Date de reservation : </label>
-                <input className='input' type="date"  placeholder="Date de reservation" onChange={(e)=>setDate(e.target.value)}/>
+                <label htmlFor="">Date de dédut de réservation : </label>
+                <input className='input' 
+                    type="date" 
+                    min={new Date().toISOString().slice(0,10)} 
+                    placeholder="Date de reservation" 
+                    onChange={(e)=>setDateStart(e.target.value)}/>
+                    <br/><br/>
+                <label htmlFor="">Date de fin de réservation : </label>
+                <input className='input' 
+                    type="date" 
+                    min={dateStart} 
+                    placeholder="Date de reservation" 
+                    onChange={(e)=>setDateEnd(e.target.value)}/>
 
                 <button className="button1" onClick={()=>postBooking()} >Réserver</button>
                 </form>

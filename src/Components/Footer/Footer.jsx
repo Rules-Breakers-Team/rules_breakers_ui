@@ -14,7 +14,7 @@ export function Footer() {
                 </div>
                 <div className="col-md-3 reveal-3">
                 <h5>Email<i className="mx-2 fas fa-envelope fa-1x"></i></h5>
-                <p>mon.hotel@gmail.com</p>
+                <p>N.hotel@gmail.com</p>
                 </div>
                 <div className="col-md-3 reveal-4">
                 <h5>Téléphone<i className="mx-2 fas fa-phone fa-1x"></i></h5>
