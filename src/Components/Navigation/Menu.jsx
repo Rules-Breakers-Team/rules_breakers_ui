@@ -5,7 +5,8 @@ import logo from "./image/logo.png";
 import "../../Style/bootstrap/bootstrap.css"
 
 
-export function Menu() {
+export function Menu(props) {
+  const {button} = props;
   const navigate = useNavigate()
     return(
         <>
@@ -28,7 +29,7 @@ export function Menu() {
           </ul>
         </div>
         <div class="text-end">
-          <button type="button" className="button2" onClick={()=> navigate('/login')}>Se connecter</button>
+          <button type="button" className="button2" onClick={()=> navigate('/login')}>{button}</button>
         </div>
       </div>
     </div>
