@@ -5,8 +5,8 @@ import "../../Style/bootstrap/bootstrap.css"
 export function Pricing() {
     return(
         <>
-            <div className="container text-center mt-5">
-                <h2 className="my-3">Nos Offres</h2>
+            <div className="container text-center mt-5" id="offres">
+                <h2 className="my-3" >Nos Offres</h2>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
             <div class="col">
                 <div class="card mb-4 rounded-3 shadow">
