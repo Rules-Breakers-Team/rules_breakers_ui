@@ -7,6 +7,7 @@ import "../../Style/bootstrap/bootstrap.css"
 
 export function Menu(props) {
   const {button, label1, label2, link1} = props;
+
   const navigate = useNavigate()
     return(
         <>
@@ -29,7 +30,7 @@ export function Menu(props) {
           </ul>
         </div>
         <div class="text-end">
-          <button type="button" className="button2" onClick={()=> navigate('/login')}>{button}</button>
+          <button type="button" className="button2" onClick={()=> navigate('/login')}>Se connecter</button>
         </div>
       </div>
     </div>
