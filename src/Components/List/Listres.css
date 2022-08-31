@@ -1,0 +1,159 @@
+.test{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+}
+
+.lab{
+ font-size: large;
+}
+
+h2{
+    color: #01197b;
+    padding-top: 2%;
+}
+
+.tab{
+    border-top: 2px #01197b;
+}
+
+table{
+    width: 90%;
+    margin: auto;
+    margin-left: 5%;
+    margin-top: 2%;
+    scroll-padding-right: 2px;
+}
+
+.filtre{
+    margin-left: 1%;
+    border-color: #01197b;
+}
+
+option:hover{
+    background-color: #01197b ;
+}
+
+tr:hover{
+    border-left: 2px solid #01197b;
+}
+
+.containerr{
+    border: 2px solid #01197b;
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    padding-bottom: 2%;
+}
+
+th{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
