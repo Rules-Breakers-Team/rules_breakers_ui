@@ -9,10 +9,10 @@ import { BookingForm } from "../Booking/BookingForm";
 
 export function Home() {
     return (
-        <>
+        <div id="top">
             <Menu />
             <Pricing />
-            <div className="container my-5 text-center">
+            <div className="container my-5 text-center" id="apropos">
                 <h2 className="py-3">A Propos</h2>
                 <div className="row">
                     <div className="col-md-6 col-sm-12">
@@ -24,6 +24,6 @@ export function Home() {
                 </div>
             </div>
             <Footer />
-        </>
+        </div>
     )
 }

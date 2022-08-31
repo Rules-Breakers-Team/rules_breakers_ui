@@ -1,9 +1,11 @@
+import React from "react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../Style/bootstrap/bootstrap.css"
 
 
 export function Pricing() {
+
     const [types, setTypes] = useState([]);
 
     useEffect(()=>{
@@ -15,10 +17,11 @@ export function Pricing() {
             console.log(err);
         })
     },[types])
+    
     return(
         <>
-            <div className="container text-center mt-5">
-                <h2 className="my-3">Nos Offres</h2>
+           <div className="container text-center mt-5" id="offres">
+                <h2 className="my-3" >Nos Offres</h2>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                 {
                     types.map((elt, k)=>{
@@ -54,7 +57,7 @@ export function Pricing() {
                     <li>250 000 Ar</li>
                     <li>100 000 Ar</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Reserver</button>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Reserver</button>
                 </div>
                 </div>
             </div>
@@ -70,7 +73,7 @@ export function Pricing() {
                         <li>250 000 Ar</li>
                         <li>100 000 Ar</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Reserver</button>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Reserver</button>
                 </div>
                 </div>
             </div>
@@ -86,7 +89,7 @@ export function Pricing() {
                         <li>250 000 Ar</li>
                         <li>100 000 Ar</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Reserver</button>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-warning">Reserver</button>
                 </div>
                 </div>
             </div>
