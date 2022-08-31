@@ -4,6 +4,7 @@ body {
 
 .container {
   max-width: 960px;
+  height:75vh;
 }
 
 .pricing-header {
