@@ -4,12 +4,14 @@ import { Menu } from "../Navigation/Menu";
 import { Pricing } from "../Pricing/Pricing";
 import photo from "./image/banner.jpg";
 import "./home.css";
-
+import image from './image/chambre.jpg'
+import Banner from "../Banner/Banner";
 
 export function Home() {
     return (
         <div id="top">
-            <Menu button="Se connecter"/>
+            <Menu/>
+            <Banner/>
             <Pricing />
             <div className="container my-5 text-center" id="apropos">
                 <h2 className="py-3">A Propos</h2>
@@ -18,7 +20,17 @@ export function Home() {
                         <img src={photo} alt="" className="banner"/>
                     </div>
                     <div className="col-md-6 col-sm-12 text-center">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minus ullam veniam dolore harum vitae rem eligendi! Reiciendis architecto impedit laudantium sed aut dignissimos excepturi accusamus atque aspernatur provident! Distinctio.</p>
+                        <p className="texte">
+Notre hotel NHOTEL qui se trouve au Sud d'Ivandry , vous offre un large choix et de chambre suivant les règles de la santé .
+                        </p>
+                    </div>
+                    <div className="col-md-6 col-sm-15 text-center">
+                    <p className="texte">
+La reservation de chambre se fait en-dessus et disponible 24h/24 et 7j/7 , avec un cadre très agréable et faite pour vos goûts de confort .
+                    </p>
+                    </div>
+                    <div className="col-md-6 col-sm-12 ">
+                        <img src={image} alt="" className="banner"/>
                     </div>
                 </div>
             </div>
