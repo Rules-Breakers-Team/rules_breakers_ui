@@ -1,6 +1,7 @@
 import axios from "axios";
+import { BASE_URL } from "./BASE_URL";
 
 const instance = axios.create({
-    baseURL: 'https://virtserver.swaggerhub.com/Oniitsiky/n-hotel_api_2/1.0/'
+    baseURL: BASE_URL
 })
 export default instance;

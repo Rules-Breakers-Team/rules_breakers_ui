@@ -1,4 +1,10 @@
-.banner{
-    width: 100%;
+.homeImage{
+    width: 80%;
+    height: 80%;
     border-radius: 8px;
+}
+.imageText {
+    margin-top: 62px;
+    align-items: center;
+    text-align: center;
 }

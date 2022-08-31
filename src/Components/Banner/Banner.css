@@ -1,0 +1,55 @@
+.banner {
+  color: white;
+  width: 100%;
+  animation: bg 8s linear infinite;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    font-size: 16px;
+        line-height: 1.42857143;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+.banner-text{
+    background-color: #6d53452c;
+    opacity: 1;
+}
+@media screen and (max-width: 35.5em) {
+  
+}
+
+@media screen and (max-width: 48em) {
+  
+}
+
+@media screen and (max-width: 64em) {
+  
+}
+
+@media screen and (max-width: 80em) {
+  
+}
+
+
+@keyframes bg {
+    0%{
+        background-image: url(./image/overlay.jpg);
+    }
+    25%{
+        background-image: url(./image/chambre.jpg);
+    }
+    50%{
+        background-image: url(./image/chambre2.jpg);
+    }
+    75%{
+        background-image: url(./image/chambre4.jpg);
+    }
+    100%{
+        background-image: url(./image/chambre3.jpg);
+    }
+}
