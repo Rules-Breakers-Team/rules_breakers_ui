@@ -28,6 +28,9 @@ const Table = (props) => {
     return(
         <>
             <Menu button="Se déconnecter"/>
+            <div className="mt-5 mb-5">
+                <h2>Liste des chambre</h2>
+            </div>
             <div className="container" >
             <div className="btn-toolbar mb-2 mb-md-0 my-2" id="table-action">
                 <div className="btn-group me-2" >
