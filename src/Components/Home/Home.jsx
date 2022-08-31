@@ -9,7 +9,7 @@ import "./home.css";
 export function Home() {
     return (
         <div id="top">
-            <Menu />
+            <Menu button="Se connecter"/>
             <Pricing />
             <div className="container my-5 text-center" id="apropos">
                 <h2 className="py-3">A Propos</h2>
