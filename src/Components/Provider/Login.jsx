@@ -1,7 +1,7 @@
 import InPut from "../Input/Input";
 import SignUp from "./SignUp";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import './Provider.css';
 import { BASE_URL } from "../Config/BASE_URL";
 import 'react-toastify/dist/ReactToastify.css';

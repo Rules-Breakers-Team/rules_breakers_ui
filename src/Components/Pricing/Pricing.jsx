@@ -7,7 +7,6 @@ export function Pricing() {
     const [types, setTypes] = useState([]);
     const [show,setShow] = useState(false);
     const closeModalHandler = () => setShow(false);
-    const [today, setToday] = useState();
 
     useEffect(()=>{
         const promise = instance.get("types?page=0&page_size=10");

@@ -15,6 +15,7 @@ export function Home() {
             button="Se connecter" 
             label1="Nos Offres" 
             id1="/#offres"
+            link1="/"
             label2= "A propos" 
             id2="#apropos"
             />

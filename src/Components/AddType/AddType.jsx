@@ -78,7 +78,7 @@ export function AddType({show, closeModalHandler}){
                 <label htmlFor="">Type : </label>
                 <select className="btn btn-sm btn-outline-secondary" 
                 onChange={(e) =>{
-                  setRoomNumber(e.target.value);
+                  setRoomType(e.target.value);
                 }}>
                     {
                         type?.map((elt,k) => (

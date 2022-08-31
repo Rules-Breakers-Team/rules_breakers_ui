@@ -13,10 +13,6 @@ h2{
     padding-top: 2%;
 }
 
-.tab{
-    border-top: 2px #01197b;
-}
-
 table{
     width: 90%;
     margin: auto;
@@ -27,7 +23,6 @@ table{
 
 .filtre{
     margin-left: 1%;
-    border-color: #01197b;
 }
 
 option:hover{
@@ -39,7 +34,6 @@ tr:hover{
 }
 
 .containerr{
-    border: 2px solid #01197b;
     border-radius: 5px;
     margin-left: 5%;
     margin-right: 5%;

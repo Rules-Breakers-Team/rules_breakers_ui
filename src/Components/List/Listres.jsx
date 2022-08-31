@@ -11,6 +11,7 @@ export function Listres(){
 		const promise = instance.get("booking?page=0&page_size=10");
 		promise.then((res) => {
 			setData(res.data);
+			console.log(res.data);
 		})
 		.catch((err)=> {
 			console.log(err);
@@ -46,19 +47,19 @@ export function Listres(){
 		       <th className="th">Contact</th>
 		       <th className="th">Type de chambre</th>
 		       <th className="th">Date de réservation</th>
-		       {/*<th className="th">Effectué le</th>
-		       <th className="th">Numero de chambre</th>*/}
+		       <th className="th">Effectué le</th>
+		       <th className="th">Numero de chambre</th>
 	         </thead>
 	         <tbody>
 				{
 					data?.map((elt, k) => (
 						<tr>
 							<td className="p-2">{elt?.client}</td>
-							<td className="p-2">{elt?.phone_number}</td>
-							<td className="p-2">{elt?.room_type}</td>
-							<td className="p-2">{elt?.booking_date}</td>
-							{/*<td className="p-2">2022-06-12</td>
-							<td className="p-2">12</td>*/}
+							<td className="p-2">{elt?.phoneNumber}</td>
+							<td className="p-2">{elt?.roomType}</td>
+							<td className="p-2">{elt?.bookingStart}</td>
+							<td className="p-2">{elt?.bookingDate}</td>
+							<td className="p-2">{elt?.roomNumber}</td>
 		      			</tr>
 					))
 				}
