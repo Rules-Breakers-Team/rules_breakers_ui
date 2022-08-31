@@ -102,16 +102,17 @@
 input{
     border: 1px dotted black;
     display: inline-block;
-    font-family: 'Gill Sans', 'Gill Sans MT';
+    font-family: 'Poppins','sans-serif';
     box-sizing: border-box;
     transition: .5s;
 }
 input::placeholder{
     text-align: center;
     justify-content: center;
+    font-family: 'Poppins','sans-serif';
     align-items: center;
 }
-input[type="text"]{
+.input[type="text"]{
     background: #fff;
     height: 50px;
     border: none;

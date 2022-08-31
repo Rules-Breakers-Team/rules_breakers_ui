@@ -4,7 +4,7 @@ export default function InPut(props) {
 
     return(
 <>
-    <input className="input" type={type}  placeholder={placeholder} required onChange={(e)=>setValue(e.target.value)}/>
+    <input className="input1" type={type}  placeholder={placeholder} required onChange={(e)=>setValue(e.target.value)}/>
 </>
     )
 }

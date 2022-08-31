@@ -50,13 +50,13 @@ export default function Modal({ show , closeModalHandler}){
             <form onSubmit={handleSubmit}>
 
                 <label htmlFor="">Nom du client : </label>
-                <input type="text"placeholder="Nom" onChange={(e)=>setNom(e.target.value)}/>
+                <input className='input' type="text"placeholder="Nom" onChange={(e)=>setNom(e.target.value)}/>
 
                 <label htmlFor="">Numero de telephone : </label>
-                <input type="text" placeholder="+261..." onChange={(e)=>setNumero(e.target.value)}/>
+                <input className='input' type="text" placeholder="+261..." onChange={(e)=>setNumero(e.target.value)}/>
                 
                 <label htmlFor="">Date de reservation : </label>
-                <input type="date"  placeholder="Date de reservation" onChange={(e)=>setDate(e.target.value)}/>
+                <input className='input' type="date"  placeholder="Date de reservation" onChange={(e)=>setDate(e.target.value)}/>
 
                 <button className="button1" onClick={()=>postBooking()} >S'enregistrer</button>
                 </form>

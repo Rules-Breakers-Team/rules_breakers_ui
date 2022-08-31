@@ -75,6 +75,18 @@ a {
 	transition: transform 80ms ease-in;
 	cursor: pointer;
 }
+.retour{
+	cursor: pointer;
+	color: #01197b;
+	font-size: 12px;
+}
+.button2:hover {
+	border: 1px solid rgba(0, 0, 0, 0.959);
+	box-shadow: 
+	122px 12px 4px 4px #01197b
+	42px  4px  12px 12px #01197b
+	;
+}
 .button:active {
 	transform: scale(0.95);
 }
@@ -95,7 +107,7 @@ form {
 	text-align: center;
 }
 
-.input {
+.input1 {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
