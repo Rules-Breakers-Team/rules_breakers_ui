@@ -5,7 +5,6 @@ import instance from "../Config/axios";
 import Modal from "../Modal/Modal";
 
 export function Pricing() {
-
     const [types, setTypes] = useState([]);
     const [show,setShow] = useState(false);
     const closeModalHandler = () => setShow(false);
