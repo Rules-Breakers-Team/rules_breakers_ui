@@ -1,0 +1,8 @@
+
+#footer {
+	width: 100%;
+	text-align: center;
+    animation: footer 3s linear;
+	background-image:linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./image/footer.jpg);
+}
+
