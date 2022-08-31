@@ -50,15 +50,16 @@ return(
     <div className="container1" id="container" >
 		<div className="form-container sign-in-container">
 			<form action="#" onSubmit={handlesubmit}>
-				<h1 className="title">Sign In</h1>
+				<h1 className="title">Se connecter</h1>
                 <InPut type ="text" placeholder="EMAIL" setValue={setUsername} />
                 <InPut type ="password" placeholder="PASSWORD" setValue={setPassword} />
                 <ToastContainer
                 position="top-center"
                 closeButton={true}
                 />
-				<p>New there , click<a href="#" color="yellow" onClick={()=>setChoose(true)} ><b> SIGN UP</b></a></p>
-				<button onClick={()=>getData()} className='button1' >Sign In</button><br />
+				<p>Pour les nouveaux , <a href="#" className="retour" color="yellow" onClick={()=>setChoose(true)} ><b> S'enregistrer</b></a></p>
+				<button onClick={()=>getData()} className='button1' >Se connecter</button><br />
+                <em><a className="retour" onClick={()=>navigate('/')} ><i className="fa fa-arrow-left"></i>  RETOUR </a> à la page principal</em><br/>
 			</form>
 		</div>
 		<div className="overlay-container">

@@ -20,8 +20,7 @@ tr:hover{
 .button2 {
 	border-radius: 20px;
 	margin-top: 1%;
-	border:0 solid rgba(247, 65, 65, 0.507);
-	background-color: rgba(247, 65, 65, 0.664);
+	background-color: #C49C48;
 	color: #FFFFFF;
 	font-size: 10px;
 	padding: 7px 15px;
