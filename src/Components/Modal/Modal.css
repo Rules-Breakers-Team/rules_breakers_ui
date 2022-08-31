@@ -6,7 +6,7 @@
     transition: all 1.3s ease ;
     position: fixed;
     box-shadow: 100px 100px 600px 600px rgba(0,0,0,0.22);
-    top : 0;
+    top : 10%;
     left: 20%;
     z-index: 100;
 }

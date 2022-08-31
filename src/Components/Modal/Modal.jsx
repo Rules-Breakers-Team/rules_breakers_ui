@@ -3,6 +3,7 @@ import './Modal.css';
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer , toast } from 'react-toastify';
+import instance from '../Config/axios';
 
 export default function Modal({ show , closeModalHandler}){  
     const handleSubmit = (e) => {
@@ -13,10 +14,10 @@ export default function Modal({ show , closeModalHandler}){
     const [date,setDate] = useState();
 
     const error =()=>{
-        toast.error("Non reserver ")
+        toast.error("Reservation non effectuée")
     }
     const success =()=>{
-        toast.success("Reservation bien faite ")
+        toast.success("Reservation éffectuée")
     }
     const data =   {
             client: nom,
@@ -24,10 +25,16 @@ export default function Modal({ show , closeModalHandler}){
             booking_date: date ,
             room_type: 1
           }
-    const postBooking = async() => {    
-        const promise = axios.post('http://localhost:8080/booking',[data])
-        promise.then(res => success() , closeModalHandler())
-        .catch(er => error() , closeModalHandler())
+    const postBooking = async() => {
+        const promise = instance.post("booking", [data]);
+        promise.then((res) => {
+            success();
+            closeModalHandler();
+        })
+        .catch((err) => {
+            error();
+            closeModalHandler();
+        })
     }
     return(
         <>
@@ -58,7 +65,7 @@ export default function Modal({ show , closeModalHandler}){
                 <label htmlFor="">Date de reservation : </label>
                 <input className='input' type="date"  placeholder="Date de reservation" onChange={(e)=>setDate(e.target.value)}/>
 
-                <button className="button1" onClick={()=>postBooking()} >S'enregistrer</button>
+                <button className="button1" onClick={()=>postBooking()} >Réserver</button>
                 </form>
 
             </div>

@@ -6,7 +6,7 @@ import "../../Style/bootstrap/bootstrap.css"
 
 
 export function Menu(props) {
-  const {button} = props;
+  const {button, label1, label2} = props;
   const navigate = useNavigate()
     return(
         <>
@@ -21,10 +21,10 @@ export function Menu(props) {
         <div className="justify-content-lg-start">
           <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="#offres" className="nav-link text-white" to="/home"> Nos Offres</a>
+              <a href="#offres" className="nav-link text-white" to="/home"> {label1}</a>
             </li>
             <li>
-              <a href="#apropos" className="nav-link text-white" to="/history"> A Propos</a>
+              <a href="#apropos" className="nav-link text-white" to="/history"> {label2}</a>
             </li>
           </ul>
         </div>
