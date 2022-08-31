@@ -1,8 +1,8 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../Style/bootstrap/bootstrap.css"
 import instance from "../Config/axios";
 import Modal from "../Modal/Modal";
-
 
 export function Pricing() {
 
@@ -48,7 +48,7 @@ export function Pricing() {
                     </div>
                     ))
                 }
-                {/*<div class="col">
+                <div class="col">
                 <div class="card mb-4 rounded-3 shadow">
                 <div class="card-header py-3">
                     <h4 class="my-0 fw-normal">CHAMBRE DOUBLE</h4>
@@ -95,7 +95,7 @@ export function Pricing() {
                     <button type="button" class="w-100 btn btn-lg btn-outline-warning">Reserver</button>
                 </div>
                 </div>
-            </div>*/}
+            </div>
             </div>
             </div>
         </>
