@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../Style/bootstrap/bootstrap.css"
 import instance from "../Config/axios";
@@ -17,9 +16,6 @@ export function Pricing() {
         })
         .catch((err) => {
             console.log(err);
-        })
-        types.map((elt,k) => {
-            console.log(elt?.name);
         })
     },[]);
     

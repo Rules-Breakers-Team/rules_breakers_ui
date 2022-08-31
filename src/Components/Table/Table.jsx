@@ -5,10 +5,8 @@ import Pagination from "../Pagination/Pagination";
 import "./table.css";
 
 const Table = (props) => {
-    const {children} = props;
     const [data, setData] = useState([]);
     const [type, setType] = useState([]);
-    const [filter, setFilter] = useState("")
 
     useEffect(() => {
         const data = instance.get("rooms?page=0&page_size=2");
@@ -26,11 +24,7 @@ const Table = (props) => {
                 console.log(err);
             })
     })
-    const updateRoom = () => {
-        const data = {
-
-        }
-    }
+    
     return(
         <>
             <Menu button="Se déconnecter" label1="Réservations" link1="/booking"/>
@@ -55,7 +49,7 @@ const Table = (props) => {
                     }
                 </select>
                 </div>
-            <table className="table-striped rounded-2 shadow text-center" id="pdfdiv">
+            <table className="table-striped rounded-2 shadow text-center room-table" id="pdfdiv">
                 <thead>
                     <tr>
                         <td>N° de chambre</td>

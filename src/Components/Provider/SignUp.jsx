@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "./Login";
 import './Provider.css';
-import { BASE_URL } from "../../BASE_URL";
+import { BASE_URL } from "../Config/BASE_URL";
 import InPut from "../Input/Input";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -39,7 +39,7 @@ return(
 <div className="body">
     <div className="container1" id="container" >
 		<div className="form-container sign-in-container">
-			<form action="#" onSubmit={handlesubmit}>
+			<form action="#" onSubmit={handlesubmit} className="form">
 				<h1 className="title">S'enregistrer</h1>
                 <InPut type ="email" placeholder="EMAIL" setValue={setUsername} />
                 <InPut type ="password" placeholder="PASSWORD" setValue={setPassword} />
@@ -49,7 +49,7 @@ return(
                 />
 				<p>Déjà membre ? <a href="#" className="retour" color="yellow" onClick={()=>setChoose(true)} ><b> Se connecter</b></a></p>
 				<button className="button1" onClick={()=>addAdmin()}>Sign Up</button><br/>
-                <em><a className="retour" onClick={()=>navigate('/')} ><i className="fa fa-arrow-left"></i>  RETOUR </a> à la page principal</em><br/>
+                <em><a className="back" onClick={()=>navigate('/')} ><i className="fa fa-arrow-left"></i>  RETOUR </a> à la page principal</em><br/>
 			</form>
 		</div>
 		<div className="overlay-container">

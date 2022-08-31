@@ -1,17 +1,17 @@
 import React from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./menu.css";
 import logo from "./image/logo.png";
 import "../../Style/bootstrap/bootstrap.css"
 
 
 export function Menu(props) {
-  const {button, label1, label2, link1} = props;
+  const { id1,label1, label2, id2, link1} = props;
 
   const navigate = useNavigate()
     return(
         <>
-  <header className="sticky-top">
+  <header className="navbar-container sticky-top">
     <div className="px-3 navbar" >
       <div className="container d-flex justify-content-between">
         <div>
@@ -22,10 +22,10 @@ export function Menu(props) {
         <div className="justify-content-lg-start">
           <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <Link to={link1}><a href="#offres" className="nav-link text-white" to="/home"> {label1}</a></Link>
+              <a href={id1} className="nav-link text-white" to="/home"> {label1}</a>
             </li>
             <li>
-              <a href="#apropos" className="nav-link text-white" to="/history"> {label2}</a>
+              <a href={id2} className="nav-link text-white" to="/history"> {label2}</a>
             </li>
           </ul>
         </div>
