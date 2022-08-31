@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import { Home } from './Components/Home/Home';
+import { Listres } from "./Components/List/Listres";
 import Login from './Components/Provider/Login';
-import { Home } from './Components/Home/Home';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/login" element={<Login/>}/>
+      <Route path="/reservation" element={<Listres/>}/>
     </Routes>
   </BrowserRouter>
 </>
