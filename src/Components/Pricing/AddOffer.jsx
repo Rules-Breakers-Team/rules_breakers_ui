@@ -25,8 +25,8 @@ const AddOffer = ({show, closeModal}) => {
         price: price
     }
     const postType = async() => {
-        const promise = instance.post(`type`, [data]);
-        promise.then((res) => {
+        await instance.post("/types", [data])
+        .then((res) => {
             success();
             closeModal();
             setLoading(false)
@@ -36,10 +36,7 @@ const AddOffer = ({show, closeModal}) => {
             closeModal();
             setLoading(false)
         })
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-     }; 
+    } 
     return(
         <>
             {
@@ -62,7 +59,7 @@ const AddOffer = ({show, closeModal}) => {
         </div> 
         <div className="modal-content">
             <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form>
 
                 <label htmlFor="">Nom de l'offre :</label>
                 <input className='input' 

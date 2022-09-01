@@ -22,10 +22,10 @@ export function Menu(props) {
         <div className="justify-content-lg-start">
           <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <Link style={{textDecoration:'none'}} to={link1}><a href={id1} className="nav-link text-white" > {label1}</a></Link>
+              <Link style={{textDecoration:'none'}} to={link1}><a href="#apropos" className="nav-link text-white" > {label1}</a></Link>
             </li>
             <li>
-              <Link style={{textDecoration:'none'}} to={link2}><a href={id2} className="nav-link text-white"> {label2}</a></Link>
+              <Link style={{textDecoration:'none'}} to={link2}><a href="#offres" className="nav-link text-white"> {label2}</a></Link>
             </li>
           </ul>
         </div>

@@ -25,8 +25,8 @@ const ModifyOffer = ({show, closeModal}) => {
         price: price
     }
     const putType = async() => {
-        const promise = instance.put(`type/id`, [data]);
-        promise.then((res) => {
+        await instance.put(`type/id`, [data])
+        .then((res) => {
             success();
             closeModal();
             setLoading(false);
