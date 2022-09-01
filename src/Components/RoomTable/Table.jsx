@@ -39,7 +39,7 @@ const Table = () => {
             .catch((err) => {
                 console.log(err);
             })
-    })
+    },[]);
     
     return(
         <>

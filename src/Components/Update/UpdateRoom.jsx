@@ -3,13 +3,14 @@ import "./UpdateRoom.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer , toast } from 'react-toastify';
 import instance from "../Config/axios";
+import Loader from "../Loader/Loader";
 
 
 const UpdateRoom = ({show, closeModal}) => {
     const [roomNumber, setRoomNumber] = useState();
     const [roomDescription, setRoomDescription] = useState();
     const [roomPrice, setRoomPrice] = useState();
-
+    const [loading, setLoading] = useState();
     const data = {
         newDescription: roomDescription,
         newType: roomNumber,
@@ -31,15 +32,20 @@ const UpdateRoom = ({show, closeModal}) => {
         promise.then((res) => {
             success();
             closeModal();
+            setLoading(false);
         })
         .catch((err) => {
             error();
             closeModal();
+            setLoading(false);
         })
     }
     return(
         <>
-        <ToastContainer
+        {
+            loading ? 
+            <>
+                <ToastContainer
             position="top-center"
             closeButton={true}
         />
@@ -75,7 +81,10 @@ const UpdateRoom = ({show, closeModal}) => {
                     type="text"  
                     onChange={(e) => setRoomPrice(e.target.value)}
                     />
-                <button className="button1" onClick={() => putRoom()}>Modifier</button>
+                <button className="button1" onClick={() => {
+                    putRoom();
+                    setLoading(true);
+                    }}><Loader/></button>
                 </form>
 
             </div>
@@ -84,6 +93,59 @@ const UpdateRoom = ({show, closeModal}) => {
             </div>
         </div>
         </div>
+            </>
+            :
+            <>
+                <ToastContainer
+            position="top-center"
+            closeButton={true}
+        />
+        <div className="modal-wrapper"
+      style={{
+        transform : show ? 'translateY(0vh)' : 'translateY(-100vh)',
+        opacity: show ? '1' : '0'
+      }}
+      >
+            <div className="modal-header" onClick={closeModal}>
+            <b className="add" ></b>
+            <h2 className='text-light'>Modifier les détails d'une chambre</h2>
+            <span className="close-modal-btn" onClick={closeModal}>X</span>
+        </div> 
+        <div className="modal-content">
+            <div className="modal-body">
+            <form onSubmit={handleSubmit}>
+
+                <label htmlFor="">N° de chambre : </label>
+                <input className='input' 
+                    type="text"
+                    onChange={(e) => setRoomNumber(e.target.value)}
+                    />
+
+                <label htmlFor="">Description de la chambre : </label>
+                <input className='input' 
+                    type="text"
+                    onChange={(e) => setRoomDescription(e.target.value)}
+                    />
+                
+                <label htmlFor="">Prix : </label>
+                <input className='input' 
+                    type="text"  
+                    onChange={(e) => setRoomPrice(e.target.value)}
+                    />
+                <button className="button1" onClick={() => {
+                    putRoom();
+                    setLoading(true);
+                    }}>Modifier</button>
+                </form>
+
+            </div>
+            <div className="modal-footer">
+               
+            </div>
+        </div>
+        </div>
+            </>
+        }
         </>
     )   
 }
