@@ -6,7 +6,7 @@ import "../../Style/bootstrap/bootstrap.css"
 
 
 export function Menu(props) {
-  const { id1,label1, label2, id2, link1} = props;
+  const { id1,label1, label2, id2, link1, link2, button} = props;
 
   const navigate = useNavigate()
     return(
@@ -25,12 +25,12 @@ export function Menu(props) {
               <Link to={link1}><a href={id1} className="nav-link text-white" > {label1}</a></Link>
             </li>
             <li>
-              <a href={id2} className="nav-link text-white"> {label2}</a>
+              <Link to={link2}><a href={id2} className="nav-link text-white"> {label2}</a></Link>
             </li>
           </ul>
         </div>
         <div class="text-end">
-          <button type="button" className="button2" onClick={()=> navigate('/login')}>Se connecter</button>
+          <button type="button" className="button2" onClick={()=> navigate('/login')}>{button}</button>
         </div>
       </div>
     </div>

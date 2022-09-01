@@ -5,7 +5,7 @@ import { ToastContainer , toast } from 'react-toastify';
 import instance from "../Config/axios";
 
 
-const UpdateRoom = ({roomId, roomD, roomN, roomP, show, closeModal}) => {
+const UpdateRoom = ({show, closeModal}) => {
     const [roomNumber, setRoomNumber] = useState();
     const [roomDescription, setRoomDescription] = useState();
     const [roomPrice, setRoomPrice] = useState();
@@ -27,7 +27,7 @@ const UpdateRoom = ({roomId, roomD, roomN, roomP, show, closeModal}) => {
         toast.success("Modification éffectuée")
     }
     const putRoom = async() => {
-        const promise = instance.put(`room/${roomId}`, [data]);
+        const promise = instance.put(`room/`, [data]);
         promise.then((res) => {
             success();
             closeModal();
@@ -61,21 +61,18 @@ const UpdateRoom = ({roomId, roomD, roomN, roomP, show, closeModal}) => {
                 <label htmlFor="">N° de chambre : </label>
                 <input className='input' 
                     type="text"
-                    defaultValue={roomN}
                     onChange={(e) => setRoomNumber(e.target.value)}
                     />
 
                 <label htmlFor="">Description de la chambre : </label>
                 <input className='input' 
                     type="text"
-                    defaultValue={roomD}
                     onChange={(e) => setRoomDescription(e.target.value)}
                     />
                 
                 <label htmlFor="">Prix : </label>
                 <input className='input' 
-                    type="text" 
-                    defaultValue={roomP} 
+                    type="text"  
                     onChange={(e) => setRoomPrice(e.target.value)}
                     />
                 <button className="button1" onClick={() => putRoom()}>Modifier</button>

@@ -17,7 +17,6 @@ const Table = () => {
     const [roomPrice, setRoomPrice] = useState();
     const closeModal = () => {
         setShowUpdate(false);
-        console.log(roomDesc);
     };
     const closeModalHandler = () => setShow(false);
 
@@ -26,6 +25,7 @@ const Table = () => {
         const data = instance.get("rooms?page=0&page_size=2");
         data.then((res) => {
             setData(res.data);
+            console.log(res.data);
         })
         .catch((err) => {
             console.log(err);
@@ -49,7 +49,12 @@ const Table = () => {
             roomN={roomNum}
             roomP={roomPrice}
     />
-            <Menu button="Se déconnecter" label1="Réservations" link1="/booking"/>
+            <Menu button="Se déconnecter" 
+            label1="Réservations" 
+            link1="/booking"
+            label2="Offres"
+            link2="/type"
+            />
             <div className="mt-5 mb-5">
                 <h2>Liste des chambres</h2>
             </div>
@@ -102,9 +107,7 @@ const Table = () => {
                                 </td>
                             </tr>
                         ))
-                    }onChange={(e) =>{
-                        setRoomPrice(e.target.value)
-                    } }
+                    }
                     
                 </tbody>
             </table>

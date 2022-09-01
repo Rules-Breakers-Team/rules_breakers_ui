@@ -26,7 +26,12 @@ export function Listres(){
 	}, [data]);
 	return (
         <>
-		<Menu button="Se déconnecter" label1="Chambres" link1="/room"/>
+		<Menu button="Se déconnecter"
+		label1="Chambres"
+		link1="/room"
+		label2="Offres"
+		link2="/type"
+		/>
             <div className="bgr">
 		<div className="containerr">
 		  <h2>Liste des réservations</h2>
