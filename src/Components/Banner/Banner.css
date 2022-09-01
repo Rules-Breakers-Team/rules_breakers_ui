@@ -14,10 +14,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   padding: 0;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px black;
 }
 .banner-text{
     text-shadow: 1000px;
-    background-color: #6d53452c;
+    text-align: center;
     opacity: 1;
 }
 @media screen and (max-width: 35.5em) {
@@ -41,7 +43,13 @@
     0%{
         background-image: url(./image/suuite.jpg);
     }
+    25%{
+        background-image: url(./image/chambre.jpg);
+    }
     50%{
+        background-image: url(./image/familierr.webp);
+    }
+    75%{
         background-image: url(./image/familierr.webp);
     }
     100%{
