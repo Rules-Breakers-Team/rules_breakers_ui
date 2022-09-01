@@ -27,8 +27,8 @@ const UpdateRoom = ({show, closeModal}) => {
         toast.success("Modification éffectuée")
     }
     const putRoom = async() => {
-        const promise = instance.put(`room/`, [data]);
-        promise.then((res) => {
+        await instance.put(`/room`, [data])
+        .then((res) => {
             success();
             closeModal();
         })
