@@ -113,7 +113,7 @@ const AddOffer = ({show, closeModal}) => {
         </div> 
         <div className="modal-content">
             <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form>
 
                 <label htmlFor="">Nom de l'offre :</label>
                 <input className='input' 
