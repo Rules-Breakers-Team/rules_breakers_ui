@@ -16,6 +16,7 @@
   padding: 0;
 }
 .banner-text{
+    text-shadow: 1000px;
     background-color: #6d53452c;
     opacity: 1;
 }
@@ -38,18 +39,12 @@
 
 @keyframes bg {
     0%{
-        background-image: url(./image/overlay.jpg);
-    }
-    25%{
-        background-image: url(./image/chambre.jpg);
+        background-image: url(./image/suuite.jpg);
     }
     50%{
-        background-image: url(./image/chambre2.jpg);
-    }
-    75%{
-        background-image: url(./image/chambre4.jpg);
+        background-image: url(./image/familierr.webp);
     }
     100%{
-        background-image: url(./image/chambre3.jpg);
+        background-image: url(./image/douuble.jpg);
     }
 }
