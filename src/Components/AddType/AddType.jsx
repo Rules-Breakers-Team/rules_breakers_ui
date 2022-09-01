@@ -19,8 +19,8 @@ export function AddType({show, closeModalHandler}){
     toast.success("Chambre ajoutée");
   }
   const data = {
-      description: description,
       roomNumber: roomNumber,
+      description: description,
       type: roomType
     }
 
@@ -33,13 +33,15 @@ export function AddType({show, closeModalHandler}){
     })
   },[type]);
   const postRoom = async() => {
-    const promise = instance.post("room", [data]);
+    const promise = instance.post("rooms", [data]);
     promise.then((res) => {
+      console.log(res);
         success();
         closeModalHandler();
         setLoading(false);
     })
     .catch((err) => {
+      alert(err)
         error();
         closeModalHandler();
         setLoading(false)
@@ -128,25 +130,25 @@ export function AddType({show, closeModalHandler}){
             <form >
 
                 <label htmlFor="">N° de la chambre</label>
-                <input className='input' 
+                <input className='form-control' 
                     type="text"placeholder="N° de chambre" 
                     onChange={(e) =>setRoomNumber(e.target.value)}
                     />
 
                 <label htmlFor="">Description de la chambre : </label>
-                <input className='input' 
+                <input className='form-control' 
                     type="text" placeholder="Description..." 
                     onChange={(e) => setDescription(e.target.value)}
                     />
                 
                 <label htmlFor="">Type : </label>
-                <select className="btn btn-sm btn-outline-secondary" 
+                <select className="form-control" 
                 onChange={(e) =>{
                   setRoomType(e.target.value);
                 }}>
                     {
                         type?.map((elt,k) => (
-                            <option value="category">{elt?.name}</option>
+                            <option value={elt?.id}>{elt?.name}</option>
                         ))
                         
                     }

@@ -7,6 +7,8 @@ export function Pricing() {
     const [types, setTypes] = useState([]);
     const [show,setShow] = useState(false);
     const closeModalHandler = () => setShow(false);
+    const [id, setId] = useState(1);
+
 
     useEffect(()=>{
         const promise = instance.get("types?page=0&page_size=10");
@@ -18,11 +20,14 @@ export function Pricing() {
             console.log(err);
         })
     },[]);
-    
+    function showWindow(index) {
+        setId(index);
+        setShow(true);
+    }
     return(
-        <div className="all" id="offres">
-            <Modal show={show} closeModalHandler={closeModalHandler} />
-           <div className="container text-center mt-5" >
+        <>
+            <Modal show={show} closeModalHandler={closeModalHandler} id={id}/>
+           <div className="container text-center mt-5" id="offres">
                 <h2 className="my-3" >Nos Offres</h2>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                 {
@@ -52,7 +57,7 @@ export function Pricing() {
                                 <li>{elt?.description}</li>
                                 <li>{elt?.price}</li>
                             </ul>
-                            <button type="button" class="w-100 bt</del>n btn-lg btn-outline-primary" onClick={()=>setShow(true)}>Reserver</button>
+                            <button type="button" class="w-100 bt</del>n btn-lg btn-outline-primary" onClick={()=>showWindow(elt?.id)}>Reserver</button>
                         </div>
                         </div>
                     </div>

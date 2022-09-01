@@ -22,7 +22,8 @@ table{
 }
 
 .filtre{
-    margin-left: 1%;
+    border-color: #01197b;
+    width: 10%;
 }
 
 option:hover{
