@@ -4,15 +4,20 @@ import { useEffect, useState } from "react";
 import instance from "../Config/axios";
 import ModifyOffer from "./ModifyOffer";
 import { Footer } from "../Footer/Footer";
+import AddOffer from "./AddOffer";
 
 
 
 const OffersList =  () => {
     const [types, setTypes] = useState([]);
     const [show, setShow] = useState(false);
+    const [showAdd, setShowAdd] = useState(false);
     const closeModal = () => {
         setShow(false);
     };
+    const closeAddModal = () => {
+        setShowAdd(false);
+    }
     useEffect(()=>{
         const promise = instance.get("types?page=0&page_size=10");
         promise.then((res) => {
@@ -28,6 +33,10 @@ const OffersList =  () => {
             <ModifyOffer
                 show={show}
                 closeModal={closeModal}
+            />
+            <AddOffer
+                show={showAdd}
+                closeModal={closeAddModal}
             />
             <Menu 
             button="Se déconnecter"
@@ -61,6 +70,7 @@ const OffersList =  () => {
                         </>
                     ))
                 }
+                <button className="btn btn-success m-auto" onClick={() => setShowAdd(true)}>Ajouter une offre</button>
                 </div>
             </div>
 		<br/>
