@@ -18,11 +18,7 @@ export function AddType({show, closeModalHandler}){
   const success =()=>{
     toast.success("Chambre ajoutée");
   }
-  const data = {
-      roomNumber: roomNumber,
-      description: description,
-      type: roomType
-    }
+  
 
   useEffect(() => {
     const type = instance.get("types?page=0&page_size=5");
@@ -33,7 +29,12 @@ export function AddType({show, closeModalHandler}){
     })
   },[type]);
   const postRoom = async() => {
-    const promise = instance.post("rooms", [data]);
+    const data = {
+      room_number: roomNumber,
+      description: description,
+      type: roomType
+    }
+    const promise = instance.post("http://localhost:8080/room", [data]);
     promise.then((res) => {
       console.log(res);
         success();

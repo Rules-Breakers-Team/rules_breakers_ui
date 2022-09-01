@@ -60,7 +60,6 @@ const AddOffer = ({show, closeModal}) => {
         <div className="modal-content">
             <div className="modal-body">
             <form>
-
                 <label htmlFor="">Nom de l'offre :</label>
                 <input className='input' 
                     type="text"

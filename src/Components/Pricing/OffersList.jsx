@@ -5,9 +5,6 @@ import instance from "../Config/axios";
 import ModifyOffer from "./ModifyOffer";
 import { Footer } from "../Footer/Footer";
 import AddOffer from "./AddOffer";
-import Button from "../Button/Button";
-
-
 
 const OffersList =  () => {
     const [types, setTypes] = useState([]);
@@ -70,7 +67,7 @@ const OffersList =  () => {
                             <li>{elt?.description}</li>
                             <li>{elt?.price}</li>
                         </ul>
-                       <Button setValue={()=>update(k)}/>
+                       <button className="button1" onClick={()=>update(k)}>Modifier</button>
                 </div>
                 </div>
             </div>

@@ -36,7 +36,7 @@ export default function Login(props) {
             body : JSON.stringify(envoie)
         };
     
-            await fetch(`${BASE_URL}/login`, options)
+            await fetch(`${BASE_URL}login`, options)
             .then(response => response.status === 200 ? navigate('/room'): error() )
             .catch(error => {
                 setErrorMess("Non autoriser");

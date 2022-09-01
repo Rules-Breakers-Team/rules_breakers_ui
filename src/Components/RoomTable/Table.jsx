@@ -26,7 +26,7 @@ const Table = () => {
     const [page, setPage] = useState(0)
 
     useEffect(() => {
-        const data = instance.get("rooms?page="+page+"&page_size=5");
+        const data = instance.get("http://localhost:8080/room?page="+page+"&page_size=5");
         data.then((res) => {
             setData(res.data);
         })
@@ -113,7 +113,7 @@ const Table = () => {
                         data.map((elt, key) => (
                             <tr key={key}>
                                 <td className="p-2">
-                                    {elt?.roomNumber}
+                                    {elt?.room}
                                     </td>
 
                                 <td className="p-2">{elt?.description}</td>
@@ -125,7 +125,7 @@ const Table = () => {
                                 <td className="p-2">{elt?.type?.price}</td>
                                 <td>
                                     <button className="btn btn-primary" 
-                                   onClick={() => handleUpdate(elt?.id, elt?.roomNumber, elt?.type?.price, elt?.description, elt?.type?.id)}>Modifier</button>
+                                   onClick={() => handleUpdate(elt?.id, elt?.room, elt?.type?.price, elt?.description, elt?.type?.id)}>Modifier</button>
                                 </td>
                             </tr>
                         ))
