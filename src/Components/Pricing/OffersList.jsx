@@ -3,6 +3,7 @@ import { Menu } from "../Navigation/Menu";
 import { useEffect, useState } from "react";
 import instance from "../Config/axios";
 import ModifyOffer from "./ModifyOffer";
+import { Footer } from "../Footer/Footer";
 
 
 
@@ -62,6 +63,9 @@ const OffersList =  () => {
                 }
                 </div>
             </div>
+		<br/>
+		<br/>
+        <Footer/>
         </>
     )
 }

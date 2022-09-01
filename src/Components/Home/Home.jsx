@@ -18,6 +18,7 @@ export function Home() {
             label2= "A propos" 
             id2="#apropos"
             link2="/"
+            button="Se connecter"
             />
             <Banner/>
             <Pricing />
@@ -53,8 +54,8 @@ export function Home() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
+        <Footer />
         </div>
     )
 }

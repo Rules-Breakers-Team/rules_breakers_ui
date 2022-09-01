@@ -5,6 +5,8 @@ import { Menu } from "../Navigation/Menu";
 import Pagination from "../Pagination/Pagination";
 import UpdateRoom from "../Update/UpdateRoom";
 import "./table.css";
+import { Footer } from "../Footer/Footer";
+
 
 const Table = () => {
     const [data, setData] = useState([]);
@@ -114,6 +116,9 @@ const Table = () => {
             <button className="mt-5 btn btn-success rounded-3" onClick={()=>setShow(true)}>Ajouter</button>
             <Pagination />
            </div>
+           <br/>
+           <br/>
+           <Footer/>
         </>
     )
 }
