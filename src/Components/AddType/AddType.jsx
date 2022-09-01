@@ -8,7 +8,7 @@ export function AddType(){
                 <input className='form-control text-center' type="text"placeholder="type"/>
                 <label htmlFor="">Chambre </label>
                 <input className='form-control text-center' type="text" placeholder="chambre"/>
-                <button className="button1">Enregistrer</button>
+                <button className="button1">Enregistrer<i class="fa fa-envelope"></i></button>
           </div>
         </>
     )

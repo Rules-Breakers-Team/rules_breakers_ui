@@ -6,18 +6,22 @@
 }
 .nav-link:hover{
     font-size: 15px;
-    background-color: rgb(230, 163, 19);
+    background-color: rgba(248, 215, 69, 0.863);
     border-radius: 12px 12px 12px 12px;
 }
 .navbar{
-    background-color: black;
+    background-color: #010b30;
 }
 
-.button3{
+.bouton{
     border-color: rgba(248, 215, 69, 0.863);
     border-radius: 8px;
-    background-color: rgba(248, 215, 69, 0.863);
     width: 150px;
     height: 40px;
     color: white;
+    background-color: #010b30;
+}
+
+.bouton:hover{
+    background-color: rgba(248, 215, 69, 0.863);
 }

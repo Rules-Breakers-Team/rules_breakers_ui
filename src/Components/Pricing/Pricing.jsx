@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../Style/bootstrap/bootstrap.css"
 import instance from "../Config/axios";
@@ -7,7 +6,7 @@ import Modal from "../Modal/Modal";
 export function Pricing() {
     const [types, setTypes] = useState([]);
     const [show,setShow] = useState(false);
-    const closeModalHandler = ()=> setShow(false);
+    const closeModalHandler = () => setShow(false);
 
     useEffect(()=>{
         const promise = instance.get("types?page=0&page_size=10");
@@ -17,9 +16,6 @@ export function Pricing() {
         })
         .catch((err) => {
             console.log(err);
-        })
-        types.map((elt,k) => {
-            console.log(elt?.name);
         })
     },[]);
     
