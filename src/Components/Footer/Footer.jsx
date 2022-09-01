@@ -6,8 +6,8 @@ import "../../Style/bootstrap/bootstrap.css"
 export function Footer() {
     return(
         <>
-            <footer id="footer">
-            <div className="container d-flex py-3 text-muted">
+            <footer id="footer" className="mt-5">
+            <div className="container d-flex py-2 text-muted">
                 <div className="col-md-3 reveal-2">
                 <h5>Notre adresse <i className="mx-2 fas fa-map-marker-alt fa-1x"></i></h5>
                 <p>Ivandry 101 Antananarivo</p>

@@ -64,19 +64,19 @@ export function AddType({show, closeModalHandler}){
             <form >
 
                 <label htmlFor="">N° de la chambre</label>
-                <input className='input' 
+                <input className='form-control' 
                     type="text"placeholder="N° de chambre" 
                     onChange={(e) =>setRoomNumber(e.target.value)}
                     />
 
                 <label htmlFor="">Description de la chambre : </label>
-                <input className='input' 
+                <input className='form-control' 
                     type="text" placeholder="Description..." 
                     onChange={(e) => setDescription(e.target.value)}
                     />
                 
                 <label htmlFor="">Type : </label>
-                <select className="btn btn-sm btn-outline-secondary" 
+                <select className="form-control" 
                 onChange={(e) =>{
                   setRoomType(e.target.value);
                 }}>

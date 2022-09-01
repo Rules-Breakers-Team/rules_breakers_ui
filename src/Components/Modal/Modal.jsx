@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer , toast } from 'react-toastify';
 import instance from '../Config/axios';
 
-export default function Modal({ show , closeModalHandler}){  
+export default function Modal({ show , closeModalHandler, id}){  
     const handleSubmit = (e) => {
         e.preventDefault();
      }; 
@@ -14,7 +14,7 @@ export default function Modal({ show , closeModalHandler}){
     const [dateEnd, setDateEnd] = useState();
 
     const error =()=>{
-        toast.error("Reservation non effectuée")
+        toast.error("Reservation non effectuée, aucune chambre disponible pour cette date. Veuillez entrez une autre date")
     }
     const success =()=>{
         toast.success("Reservation éffectuée")
@@ -22,11 +22,12 @@ export default function Modal({ show , closeModalHandler}){
     const data =   {
             client: nom,
             phoneNumber: numero,
+            roomType: id,
             bookingDate: new Date().toISOString().slice(0,10),
             bookingStart: dateStart ,
-            bookingEnd: dateEnd,
-            roomType: 1
+            bookingEnd: dateEnd
           }
+          console.log(data);
     const postBooking = async() => {
         const promise = instance.post("booking", [data]);
         promise.then((res) => {
@@ -44,7 +45,7 @@ export default function Modal({ show , closeModalHandler}){
             position="top-center"
             closeButton={true}
         />
-      <div className="modal-wrapper"
+      <div className="modal-wrapper text-center"
       style={{
         transform : show ? 'translateY(0vh)' : 'translateY(-100vh)',
         opacity: show ? '1' : '0'
@@ -60,24 +61,23 @@ export default function Modal({ show , closeModalHandler}){
             <form onSubmit={handleSubmit}>
 
                 <label htmlFor="">Nom du client : </label>
-                <input className='input' 
+                <input className='form-control text-center' 
                     type="text"placeholder="Nom" 
                     onChange={(e)=>setNom(e.target.value)}/>
 
                 <label htmlFor="">Numero de telephone : </label>
-                <input className='input' 
+                <input className='form-control text-center' 
                     type="text" placeholder="+261..." 
                     onChange={(e)=>setNumero(e.target.value)}/>
                 
                 <label htmlFor="">Date de dédut de réservation : </label>
-                <input className='input' 
+                <input className='form-control text-center' 
                     type="date" 
                     min={new Date().toISOString().slice(0,10)} 
                     placeholder="Date de reservation" 
                     onChange={(e)=>setDateStart(e.target.value)}/>
-                    <br/><br/>
                 <label htmlFor="">Date de fin de réservation : </label>
-                <input className='input' 
+                <input className='form-control input text-center' 
                     type="date" 
                     min={dateStart} 
                     placeholder="Date de reservation" 
@@ -85,9 +85,6 @@ export default function Modal({ show , closeModalHandler}){
                 <button className="button1" onClick={()=>postBooking()} >Réserver</button>
                 </form>
 
-            </div>
-            <div className="modal-footer">
-               
             </div>
         </div>
       </div>
