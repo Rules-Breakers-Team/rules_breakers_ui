@@ -65,7 +65,7 @@ export function Listres(){
 					data?.map((elt, k) => (
 						<tr>
 							<td className="p-2">{elt?.client}</td>
-							<td className="p-2">{elt?.phoneNumber}</td>
+							<td className="p-2">{elt?.phone_number}</td>
 							<td className="p-2">{elt?.room_type}</td>
 							<td className="p-2">{elt?.room}</td>
 							<td className="p-2">{elt?.bookingDate.slice(0,10)}</td>

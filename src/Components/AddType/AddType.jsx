@@ -30,11 +30,12 @@ export function AddType({show, closeModalHandler}){
   },[type]);
   const postRoom = async() => {
     const data = {
-      room_number: roomNumber,
+      roomNumber: roomNumber,
       description: description,
       type: roomType
     }
     const promise = instance.post("http://localhost:8080/room", [data]);
+    console.log(data)
     promise.then((res) => {
       console.log(res);
         success();
@@ -91,7 +92,7 @@ export function AddType({show, closeModalHandler}){
               }}>
                   {
                       type?.map((elt,k) => (
-                          <option value="category">{elt?.name}</option>
+                          <option value={elt?.id}>{elt?.name}</option>
                       ))
                       
                   }
@@ -149,7 +150,7 @@ export function AddType({show, closeModalHandler}){
                 }}>
                     {
                         type?.map((elt,k) => (
-                            <option value={elt?.id}>{elt?.name}</option>
+                            <option value={k+1}>{elt?.name}</option>
                         ))
                         
                     }
