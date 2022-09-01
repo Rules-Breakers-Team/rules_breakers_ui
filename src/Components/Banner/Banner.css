@@ -50,9 +50,10 @@
         background-image: url(./image/familierr.webp);
     }
     75%{
-        background-image: url(./image/familierr.webp);
+        background-image: url(./image/sijamais.jpg);
     }
     100%{
         background-image: url(./image/douuble.jpg);
+        background-size: cover;
     }
 }
