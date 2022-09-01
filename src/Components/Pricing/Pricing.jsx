@@ -35,13 +35,13 @@ export function Pricing() {
                         <div class="card-body">
                             <ul class="list-unstyled mt-3 mb-4">
                                 {
-                                (elt?.name).toUpperCase() == "SUIT" ? <>
+                                (elt?.name).toUpperCase() == "SUIT" || (elt?.name).toUpperCase() =="PREMIUM" ? <>
                                 <i className="fa fa-star"></i>
                                 <i className="fa fa-star"></i>
                                 <i className="fa fa-star"></i>
                                 <i className="fa fa-star"></i>
                                 </>   
-                                : (elt?.name).toUpperCase() == "DOUBLE" ?
+                                : elt?.price < ((elt?.name).toUpperCase() == "SUIT").price  ?
                                 <>
                                 <i className="fa fa-star"></i>
                                 <i className="fa fa-star"></i>

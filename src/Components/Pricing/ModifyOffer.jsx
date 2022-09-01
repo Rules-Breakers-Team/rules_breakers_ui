@@ -3,7 +3,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer , toast } from 'react-toastify';
 import instance from "../Config/axios";
 
-
 const ModifyOffer = ({show, closeModal}) => {
     const [name, setName] = useState();
     const [description, setDescription] = useState();
@@ -23,7 +22,7 @@ const ModifyOffer = ({show, closeModal}) => {
         price: price
     }
     const putType = async() => {
-        await instance.put(`type/id`, [data])
+        await instance.put(`types`, data)
         .then((res) => {
             success();
             closeModal();
