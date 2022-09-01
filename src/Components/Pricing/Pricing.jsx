@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../Style/bootstrap/bootstrap.css"
 import instance from "../Config/axios";
 import Modal from "../Modal/Modal";
-
+import './pricing.css'
 export function Pricing() {
     const [types, setTypes] = useState([]);
     const [show,setShow] = useState(false);
@@ -39,6 +39,21 @@ export function Pricing() {
                         </div>
                         <div class="card-body">
                             <ul class="list-unstyled mt-3 mb-4">
+                                {
+                                (elt?.name).toUpperCase() == "SUIT" || (elt?.name).toUpperCase() =="PREMIUM" ? <>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                </>   
+                                : elt?.price < ((elt?.name).toUpperCase() == "SUIT").price  ?
+                                <>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                </>
+                                 : 
+                                <i className="fa fa-star"></i>
+                                }
                                 <li>{elt?.description}</li>
                                 <li>{elt?.price}</li>
                             </ul>
@@ -50,6 +65,6 @@ export function Pricing() {
                 }
             </div>
             </div>
-        </>
+        </div>
     )
 }

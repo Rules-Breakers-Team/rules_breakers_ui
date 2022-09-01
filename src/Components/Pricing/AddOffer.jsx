@@ -4,7 +4,8 @@ import { ToastContainer , toast } from 'react-toastify';
 import instance from "../Config/axios";
 import Loader from "../Loader/Loader";
 
-const ModifyOffer = ({show, closeModal}) => {
+
+const AddOffer = ({show, closeModal}) => {
     const [name, setName] = useState();
     const [description, setDescription] = useState();
     const [price, setPrice] = useState();
@@ -12,10 +13,10 @@ const ModifyOffer = ({show, closeModal}) => {
     
 
     const error =()=>{
-        toast.error("Modification non effectuée");
+        toast.error("Ajout non effectuée");
     }
     const success =()=>{
-        toast.success("Modification éffectuée");
+        toast.success("Ajout éffectuée");
     }
     const data = {
         id: 1,
@@ -23,22 +24,19 @@ const ModifyOffer = ({show, closeModal}) => {
         description: description,
         price: price
     }
-    const putType = async() => {
-        await instance.put(`types`, data)
+    const postType = async() => {
+        await instance.post("/types", [data])
         .then((res) => {
             success();
             closeModal();
-            setLoading(false);
+            setLoading(false)
         })
         .catch((err) => {
             error();
             closeModal();
-            setLoading(false);
+            setLoading(false)
         })
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-     }; 
+    } 
     return(
         <>
             {
@@ -56,33 +54,35 @@ const ModifyOffer = ({show, closeModal}) => {
       >
             <div className="modal-header" onClick={closeModal}>
             <b className="add" ></b>
-            <h2 className='text-light'>Modifier les détails d'une offre</h2>
+            <h2 className='text-light'>Ajouter une nouvelle offre</h2>
             <span className="close-modal-btn" onClick={closeModal}>X</span>
         </div> 
         <div className="modal-content">
             <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form>
 
                 <label htmlFor="">Nom de l'offre :</label>
                 <input className='input' 
                     type="text"
                     onChange={(e) => setName(e.target.value)}
+                    placeholder="Nom de l'offre..."
                     />
 
                 <label htmlFor="">Description de l'offre : </label>
                 <input className='input' 
                     type="text"
                     onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Description..."
                     />
                 
                 <label htmlFor="">Prix : </label>
                 <input className='input' 
                     type="text" 
                     onChange={(e) => setPrice(e.target.value)}
-
+                    placeholder="Price..."
                     />
                 <button className="button1" onClick={() => {
-                    putType();
+                    postType();
                     setLoading(true);
                     }}><Loader/></button>
                 </form>
@@ -93,7 +93,8 @@ const ModifyOffer = ({show, closeModal}) => {
             </div>
         </div>
         </div>
-                </>: 
+                </>
+                : 
                 <>
                     <ToastContainer
             position="top-center"
@@ -107,35 +108,37 @@ const ModifyOffer = ({show, closeModal}) => {
       >
             <div className="modal-header" onClick={closeModal}>
             <b className="add" ></b>
-            <h2 className='text-light'>Modifier les détails d'une offre</h2>
+            <h2 className='text-light'>Ajouter une nouvelle offre</h2>
             <span className="close-modal-btn" onClick={closeModal}>X</span>
         </div> 
         <div className="modal-content">
             <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form>
 
                 <label htmlFor="">Nom de l'offre :</label>
                 <input className='input' 
                     type="text"
                     onChange={(e) => setName(e.target.value)}
+                    placeholder="Nom de l'offre..."
                     />
 
                 <label htmlFor="">Description de l'offre : </label>
                 <input className='input' 
                     type="text"
                     onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Description..."
                     />
                 
                 <label htmlFor="">Prix : </label>
                 <input className='input' 
                     type="text" 
                     onChange={(e) => setPrice(e.target.value)}
-
+                    placeholder="Price..."
                     />
                 <button className="button1" onClick={() => {
-                    putType();
+                    postType();
                     setLoading(true);
-                    }}>Modifier</button>
+                    }}>Ajouter</button>
                 </form>
 
             </div>
@@ -149,4 +152,4 @@ const ModifyOffer = ({show, closeModal}) => {
         </>
     )
 }
-export default ModifyOffer;
+export default AddOffer;

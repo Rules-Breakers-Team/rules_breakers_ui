@@ -13,7 +13,7 @@ export function Home() {
         <div id="top">
             <Menu 
             label1="Nos Offres" 
-            id1="/#offres"
+            id1="#offres"
             link1="/"
             label2= "A propos" 
             id2="#apropos"
@@ -54,8 +54,8 @@ export function Home() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
+        <Footer />
         </div>
     )
 }

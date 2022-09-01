@@ -5,20 +5,35 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height:75vh;
+  height:87vh;
   display: flex;
   justify-content: center;
   align-items: center;
-    font-size: 16px;
         line-height: 1.42857143;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   padding: 0;
+  scroll-behavior: initial;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgb(211, 214, 33);
 }
 .banner-text{
     text-shadow: 1000px;
-    background-color: #6d53452c;
-    opacity: 1;
+  background-color: rgba(0, 0, 0, 0.164) ;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+    text-align: center;
+}
+.banner-text > h1 {
+    margin-top: 32vh;
+    animation: text 2s linear ;
+    font-size: 136px;
+    color: rgba(255, 255, 255, 0.89);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.banner-text > h3 {
+    animation: h3 3.5s linear ;
 }
 @media screen and (max-width: 35.5em) {
   
@@ -35,16 +50,141 @@
 @media screen and (max-width: 80em) {
   
 }
+.mt-40 {
+    margin-top: 40px;
+}
 
+.btn1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    overflow: hidden;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.14em;
+    border-radius: 3px;
+    border: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    background-color: #121212;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    animation: btn 3.75s linear;
+}
+
+.btn-lg, .btn-lg.btn-button {
+    font-size: 13px;
+    padding: 0 34px;
+    line-height: 46px;
+}
 
 @keyframes bg {
     0%{
-        background-image: url(./image/suuite.jpg);
+    background-image: url(./image/suuite.jpg);
+    }
+    25%{
+        background-image: url(./image/chambre.jpg);
     }
     50%{
         background-image: url(./image/familierr.webp);
     }
+    75%{
+        background-image: url(./image/sijamais.jpg);
+    }
     100%{
         background-image: url(./image/douuble.jpg);
+        background-size: cover;
+    }
+}
+@keyframes text {
+    0%{ 
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes h3 {
+    0%{ 
+        transform: translateX(-90%);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.btn-icon > span {
+    position: relative;
+    display: inline-block;
+    left: 0;
+    -webkit-transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+    -moz-transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+    -ms-transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+    -o-transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+    transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+}
+
+.btn-icon > i {
+    position: absolute;
+    left: auto;
+    font-size: 18px;
+    width: 36px;
+    line-height: 46px;
+    background-color: rgba(0, 0, 0, 0.05);
+    right: -36px;
+    top: 0;
+    text-align: center;
+    display: block;
+    border-radius: 0 3px 3px 0;
+    -webkit-transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+    -moz-transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+    -ms-transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+    -o-transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+    transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+}
+.btn-color {
+    background-color: #e63247;
+}
+
+.btn1:hover {
+    color: #fff;
+    opacity: .9;
+    border-color: transparent;
+}
+
+.btn-icon:hover span {
+    left: -16px;
+}
+
+.btn-icon:hover > i {
+    right: 0;
+}
+@keyframes btn {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

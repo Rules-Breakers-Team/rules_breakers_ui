@@ -29,8 +29,8 @@ export default function SignUp(props) {
             password : password,
             roles : "ADMIN",
         }
-        const promise = await axios.post(`${BASE_URL}/signup`,data)
-        promise.then(res=> res.status === 200 ? navigate('/home'): navigate('/login'))
+        await axios.post(`${BASE_URL}/signup`,data)
+        .then(res=> res.status === 200 ? navigate('/room'): navigate('/login'))
         .catch((error)=>console.log(error) ,error() )
     }
 return(
