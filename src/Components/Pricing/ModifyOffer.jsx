@@ -4,27 +4,28 @@ import { ToastContainer , toast } from 'react-toastify';
 import instance from "../Config/axios";
 import Loader from "../Loader/Loader";
 
-const ModifyOffer = ({show, closeModal}) => {
+const ModifyOffer = ({show, closeModal , id}) => {
     const [name, setName] = useState();
     const [description, setDescription] = useState();
     const [price, setPrice] = useState();
     const [loading, setLoading] = useState(false);
     
-
     const error =()=>{
         toast.error("Modification non effectuée");
     }
     const success =()=>{
         toast.success("Modification éffectuée");
     }
-    const data = {
-        id: 1,
-        name: name,
-        description: description,
-        price: price
-    }
+    
     const putType = async() => {
-        await instance.put(`types`, data)
+        const data = {
+            id: id,
+            name: name,
+            description: description,
+            price: price
+        }
+        console.log(data.id);
+        await instance.put('types', data)
         .then((res) => {
             success();
             closeModal();
