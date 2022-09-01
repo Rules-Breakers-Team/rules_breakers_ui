@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../Style/bootstrap/bootstrap.css"
 import instance from "../Config/axios";
 import Modal from "../Modal/Modal";
-
+import './pricing.css'
 export function Pricing() {
     const [types, setTypes] = useState([]);
     const [show,setShow] = useState(false);
@@ -20,9 +20,9 @@ export function Pricing() {
     },[]);
     
     return(
-        <>
+        <div className="all" id="offres">
             <Modal show={show} closeModalHandler={closeModalHandler} />
-           <div className="container text-center mt-5" id="offres">
+           <div className="container text-center mt-5" >
                 <h2 className="my-3" >Nos Offres</h2>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                 {
@@ -34,6 +34,21 @@ export function Pricing() {
                         </div>
                         <div class="card-body">
                             <ul class="list-unstyled mt-3 mb-4">
+                                {
+                                (elt?.name).toUpperCase() == "SUIT" ? <>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                </>   
+                                : (elt?.name).toUpperCase() == "DOUBLE" ?
+                                <>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                </>
+                                 : 
+                                <i className="fa fa-star"></i>
+                                }
                                 <li>{elt?.description}</li>
                                 <li>{elt?.price}</li>
                             </ul>
@@ -45,6 +60,6 @@ export function Pricing() {
                 }
             </div>
             </div>
-        </>
+        </div>
     )
 }

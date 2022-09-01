@@ -50,7 +50,7 @@ export default function Modal({ show , closeModalHandler}){
         opacity: show ? '1' : '0'
       }}
       >
-        <div className="modal-header" onClick={closeModalHandler}>
+        <div className="modal-header" onClick={closeModalHandler} >
             <b className="add" ></b>
             <h2 className='text-light'>Réserver une chambre</h2>
             <span className="close-modal-btn"onClick={closeModalHandler}>X</span>
