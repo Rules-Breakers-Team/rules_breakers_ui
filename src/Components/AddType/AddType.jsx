@@ -17,13 +17,13 @@ export function AddType({show, closeModalHandler}){
     toast.success("Ajout non éffectuée");
   }
   const data = {
-      description: description,
       roomNumber: roomNumber,
+      description: description,
       type: roomType
     }
 
   useEffect(() => {
-    const type = instance.get("types?page=0&page_size=5", [data]);
+    const type = instance.get("types?page=0&page_size=5");
     type.then((res) => {
       setType(res.data);
     })
@@ -31,12 +31,14 @@ export function AddType({show, closeModalHandler}){
     })
   })
   const postRoom = async() => {
-    const promise = instance.post("room");
+    const promise = instance.post("rooms", [data]);
     promise.then((res) => {
+      console.log(res);
         success();
         closeModalHandler();
     })
     .catch((err) => {
+      alert(err)
         error();
         closeModalHandler();
     })
@@ -82,7 +84,7 @@ export function AddType({show, closeModalHandler}){
                 }}>
                     {
                         type?.map((elt,k) => (
-                            <option value="category">{elt?.name}</option>
+                            <option value={elt?.id}>{elt?.name}</option>
                         ))
                         
                     }

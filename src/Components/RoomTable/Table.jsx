@@ -18,6 +18,7 @@ const Table = () => {
     const [roomDesc, setRoomDesc] = useState();
     const [roomIdent, setRoomIdent] = useState();
     const [roomPrice, setRoomPrice] = useState();
+    const [roomType, setRoomType] = useState();
     const closeModal = () => {
         setShowUpdate(false);
     };
@@ -25,10 +26,9 @@ const Table = () => {
     const [page, setPage] = useState(0)
 
     useEffect(() => {
-        const data = instance.get("rooms?page="+page+"&page_size=2");
+        const data = instance.get("rooms?page="+page+"&page_size=5");
         data.then((res) => {
             setData(res.data);
-            console.log(res.data);
         })
         .catch((err) => {
             console.log(err);
@@ -41,7 +41,14 @@ const Table = () => {
                 console.log(err);
             })
     })
-    
+    function handleUpdate(id, number, price, description, roomType) {
+        setShowUpdate(true);
+        setRoomIdent(id);
+        setRoomNum(number);
+        setRoomPrice(price);
+        setRoomDesc(description);
+        setRoomType(roomType);
+    }
     function printDocument() {  
         const input = document.getElementById('pdfdiv');  
         html2canvas(input)  
@@ -86,7 +93,7 @@ const Table = () => {
                     <option value="auteur">Chambres occupés</option>
                     {
                         type.map((elt,k) => (
-                            <option value="category">{elt?.name}</option>
+                            <option value={elt?.id}>{elt?.name}</option>
                         ))
                     }
                 </select>
@@ -106,20 +113,19 @@ const Table = () => {
                         data.map((elt, key) => (
                             <tr key={key}>
                                 <td className="p-2">
-                                    {elt?.room_number}
+                                    {elt?.roomNumber}
                                     </td>
 
-                                <td className="p-2">{elt?.roomNumber}</td>
                                 <td className="p-2">{elt?.description}</td>
 
                                 <td className="p-2">
                                     {elt?.available ? "Libre" : "Réservé"}
                                     </td>
-                                <td className="p-2">{elt?.type.name}</td>
-                                <td className="p-2">{elt?.type.price}</td>
+                                <td className="p-2">{elt?.type?.name}</td>
+                                <td className="p-2">{elt?.type?.price}</td>
                                 <td>
                                     <button className="btn btn-primary" 
-                                   onClick={() => setShowUpdate(true)}>Modifier</button>
+                                   onClick={() => handleUpdate(elt?.id, elt?.roomNumber, elt?.type?.price, elt?.description, elt?.type?.id)}>Modifier</button>
                                 </td>
                             </tr>
                         ))

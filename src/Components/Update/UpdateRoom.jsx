@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./UpdateRoom.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer , toast } from 'react-toastify';
 import instance from "../Config/axios";
+import { type } from "@testing-library/user-event/dist/type";
 
 
-const UpdateRoom = ({show, closeModal}) => {
+const UpdateRoom = ({show, closeModal, roomId, roomD, roomN, roomP}) => {
     const [roomNumber, setRoomNumber] = useState();
     const [roomDescription, setRoomDescription] = useState();
     const [roomPrice, setRoomPrice] = useState();
+    const [roomType, setRoomType] = useState();
+    const [type,setType] = useState();
 
-    const data = {
-        newDescription: roomDescription,
-        newType: roomNumber,
-        newPrice: roomPrice
-    }
+    useEffect(() => {
+        const type = instance.get("types?page=0&page_size=5");
+        type.then((res) => {
+          setType(res.data);
+        })
+        .catch((err) => {
+        })
+      })
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,7 +34,14 @@ const UpdateRoom = ({show, closeModal}) => {
         toast.success("Modification éffectuée")
     }
     const putRoom = async() => {
-        const promise = instance.put(`room/`, [data]);
+        const data = {
+            id : roomId,
+            description: roomDescription,
+            roomNumber : roomNumber,
+            price: roomPrice,
+            type: roomType
+        }
+        const promise = instance.put("rooms", data);
         promise.then((res) => {
             success();
             closeModal();
@@ -62,22 +76,36 @@ const UpdateRoom = ({show, closeModal}) => {
                 <input className='input' 
                     type="text"
                     onChange={(e) => setRoomNumber(e.target.value)}
+                    placeholder={roomN}
                     />
 
                 <label htmlFor="">Description de la chambre : </label>
                 <input className='input' 
                     type="text"
                     onChange={(e) => setRoomDescription(e.target.value)}
+                    placeholder={roomD}
                     />
                 
                 <label htmlFor="">Prix : </label>
                 <input className='input' 
                     type="text"  
                     onChange={(e) => setRoomPrice(e.target.value)}
+                    placeholder={roomP}
                     />
+                <label htmlFor="">Type : </label>
+                <select className="form-control" 
+                onChange={(e) =>{
+                  setRoomType(e.target.value);
+                }}>
+                    {
+                        type?.map((elt,k) => (
+                            <option value={elt?.id}>{elt?.name}</option>
+                        ))
+                        
+                    }
+                </select>
                 <button className="button1" onClick={() => putRoom()}>Modifier</button>
                 </form>
-
             </div>
             <div className="modal-footer">
                
