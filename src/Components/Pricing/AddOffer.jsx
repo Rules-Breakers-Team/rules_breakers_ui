@@ -23,8 +23,8 @@ const AddOffer = ({show, closeModal}) => {
         price: price
     }
     const postType = async() => {
-        const promise = instance.post("type", [data]);
-        promise.then((res) => {
+        await instance.post("/types", [data])
+        .then((res) => {
             success();
             closeModal();
         })
@@ -32,10 +32,7 @@ const AddOffer = ({show, closeModal}) => {
             error();
             closeModal();
         })
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-     }; 
+    } 
     return(
         <>
             <ToastContainer
@@ -55,7 +52,7 @@ const AddOffer = ({show, closeModal}) => {
         </div> 
         <div className="modal-content">
             <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form>
 
                 <label htmlFor="">Nom de l'offre :</label>
                 <input className='input' 
