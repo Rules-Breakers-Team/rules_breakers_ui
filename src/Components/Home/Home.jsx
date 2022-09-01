@@ -18,6 +18,7 @@ export function Home() {
             link1="/"
             label2= "A propos" 
             id2="#apropos"
+            link2="/"
             />
             <Banner/>
             <Pricing />
