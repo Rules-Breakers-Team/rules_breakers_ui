@@ -18,11 +18,7 @@ export function AddType({show, closeModalHandler}){
   const success =()=>{
     toast.success("Chambre ajoutée");
   }
-  const data = {
-      roomNumber: roomNumber,
-      description: description,
-      type: roomType
-    }
+  
 
   useEffect(() => {
     const type = instance.get("types?page=0&page_size=5");
@@ -33,7 +29,13 @@ export function AddType({show, closeModalHandler}){
     })
   },[type]);
   const postRoom = async() => {
-    const promise = instance.post("rooms", [data]);
+    const data = {
+      roomNumber: roomNumber,
+      description: description,
+      type: roomType
+    }
+    const promise = instance.post("http://localhost:8080/room", [data]);
+    console.log(data)
     promise.then((res) => {
       console.log(res);
         success();
@@ -90,7 +92,7 @@ export function AddType({show, closeModalHandler}){
               }}>
                   {
                       type?.map((elt,k) => (
-                          <option value="category">{elt?.name}</option>
+                          <option value={elt?.id}>{elt?.name}</option>
                       ))
                       
                   }
@@ -148,7 +150,7 @@ export function AddType({show, closeModalHandler}){
                 }}>
                     {
                         type?.map((elt,k) => (
-                            <option value={elt?.id}>{elt?.name}</option>
+                            <option value={k+1}>{elt?.name}</option>
                         ))
                         
                     }

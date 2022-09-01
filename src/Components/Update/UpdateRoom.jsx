@@ -5,6 +5,7 @@ import { ToastContainer , toast } from 'react-toastify';
 import instance from "../Config/axios";
 import { type } from "@testing-library/user-event/dist/type";
 import Loader from "../Loader/Loader";
+import axios from "axios";
 
 
 const UpdateRoom = ({show, closeModal, roomId, roomD, roomN, roomP}) => {
@@ -12,8 +13,8 @@ const UpdateRoom = ({show, closeModal, roomId, roomD, roomN, roomP}) => {
     const [roomDescription, setRoomDescription] = useState();
     const [roomPrice, setRoomPrice] = useState();
     const [roomType, setRoomType] = useState();
+    const [id, setId] = useState(roomId);
     const [type,setType] = useState();
-
     useEffect(() => {
         const type = instance.get("types?page=0&page_size=5");
         type.then((res) => {
@@ -39,14 +40,14 @@ const UpdateRoom = ({show, closeModal, roomId, roomD, roomN, roomP}) => {
     const putRoom = async() => {
 
         const data = {
-            id : roomId,
+            id : id,
             description: roomDescription,
             roomNumber : roomNumber,
             price: roomPrice,
             type: roomType
         }
-        const promise = instance.put("rooms", data);
-        promise.then((res) => {
+         axios.put("http://localhost:8080/room", data)
+        .then((res) => {
             success();
             closeModal();
             setLoading(false);

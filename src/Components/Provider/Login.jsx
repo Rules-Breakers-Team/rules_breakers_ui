@@ -36,7 +36,7 @@ export default function Login(props) {
             body : JSON.stringify(envoie)
         };
     
-            await fetch(`${BASE_URL}/login`, options)
+            await fetch(`${BASE_URL}login`, options)
             .then(response => response.status === 200 ? navigate('/room'): error() )
             .catch(error => {
                 setErrorMess("Non autoriser");
@@ -57,7 +57,7 @@ return(
                 position="top-center"
                 closeButton={true}
                 />
-			{/*	<p className="sign-up-text">Pour les nouveaux , <a href="#" className="back " color="yellow" onClick={()=>setChoose(true)} ><b> s'enregistrer</b></a></p> */}
+		{/*	<p className="sign-up-text">Pour les nouveaux , <a href="#" className="back " color="yellow" onClick={()=>setChoose(true)} ><b> s'enregistrer</b></a></p> */}
 				<button onClick={()=>getData()} className='button1' >Se connecter</button><br />
                 <em><a className="back" onClick={()=>navigate('/')} ><i className="fa fa-arrow-left"></i>  RETOUR </a> à la page principal</em><br/>
 			</form>

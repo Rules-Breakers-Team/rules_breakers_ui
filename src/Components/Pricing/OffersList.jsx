@@ -6,11 +6,10 @@ import ModifyOffer from "./ModifyOffer";
 import { Footer } from "../Footer/Footer";
 import AddOffer from "./AddOffer";
 
-
-
 const OffersList =  () => {
     const [types, setTypes] = useState([]);
     const [show, setShow] = useState(false);
+    const [id , setId] = useState()
     const [showAdd, setShowAdd] = useState(false);
     const closeModal = () => {
         setShow(false);
@@ -18,10 +17,15 @@ const OffersList =  () => {
     const closeAddModal = () => {
         setShowAdd(false);
     }
+    function update(iden) {
+        setShow(true)
+        setId(iden)
+    }
     useEffect(()=>{
         const promise = instance.get("types?page=0&page_size=10");
         promise.then((res) => {
             setTypes(res.data);
+            console.log(id)
         })
         .catch((err) => {
             console.log(err);
@@ -53,17 +57,17 @@ const OffersList =  () => {
                 {
                     types.map((elt, k) => (
                         <>
-                        <div class="col">
+                        <div class="col" key={k}>
                     <div class="card mb-4 rounded-3 shadow">
                     <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">{elt?.name}</h4>
+                        <h4 class="my-0 fw-normal" >{elt?.name}</h4>
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li>{elt?.description}</li>
                             <li>{elt?.price}</li>
                         </ul>
-                       <button type="button" class="w-100 bt</del>n btn-lg btn-outline-primary" onClick={() => setShow(true)}>Modifier</button>
+                       <button className="button1" onClick={()=>update(k)}>Modifier</button>
                 </div>
                 </div>
             </div>

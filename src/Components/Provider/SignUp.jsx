@@ -29,7 +29,7 @@ export default function SignUp(props) {
             password : password,
             roles : "ADMIN",
         }
-        await axios.post(`${BASE_URL}/signup`,data)
+        await axios.post(`${BASE_URL}signup`,data)
         .then(res=> res.status === 200 ? navigate('/room'): navigate('/login'))
         .catch((error)=>console.log(error) ,error() )
     }
