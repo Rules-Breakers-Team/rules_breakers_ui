@@ -4,7 +4,9 @@ import { AddType } from "./Components/AddType/AddType";
 import { Home } from './Components/Home/Home';
 import { Listres } from "./Components/List/Listres";
 import Login from './Components/Provider/Login';
-import Table from "./Components/Table/Table";
+import Table from "./Components/RoomTable/Table";
+import OffersList from "./Components/Pricing/OffersList";
+import ModifyOffer from "./Components/Pricing/ModifyOffer";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Route path="/reserver" element={<AddType/>}/>
       <Route path="/booking" element={<Listres/>}/>
       <Route path="/room" element={<Table/>}/>
+      <Route path="/type" element={<OffersList/>}/>
+      <Route path="/test" element={<ModifyOffer/>}/>
     </Routes>
   </BrowserRouter>
 </>

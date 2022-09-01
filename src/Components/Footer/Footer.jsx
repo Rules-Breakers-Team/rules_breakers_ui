@@ -8,9 +8,13 @@ export function Footer() {
         <>
             <footer id="footer">
             <div className="container d-flex py-3 text-muted">
-                <div className="col-md-4 reveal-3">
-                <h5>Email<i className="fas fa-envelope fa-1x"></i></h5>
-                <p>mon.hotel@gmail.com</p>
+                <div className="col-md-3 reveal-2">
+                <h5>Notre adresse <i className="mx-2 fas fa-map-marker-alt fa-1x"></i></h5>
+                <p>Ivandry 101 Antananarivo</p>
+                </div>
+                <div className="col-md-3 reveal-3">
+                <h5>Email<i className="mx-2 fas fa-envelope fa-1x"></i></h5>
+                <p>N.hotel@gmail.com</p>
                 </div>
                 <div className="col-md-4 reveal-4">
                 <h5>Téléphone<i className="mx-2 fas fa-phone fa-1x"></i></h5>

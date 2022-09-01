@@ -7,14 +7,17 @@ import "./home.css";
 import image from './image/chambre2.jpg';
 import Banner from "../Banner/Banner";
 
+
 export function Home() {
     return (
         <div id="top">
             <Menu 
             label1="Nos Offres" 
             id1="/#offres"
+            link1="/"
             label2= "A propos" 
             id2="#apropos"
+            link2="/"
             />
             <Banner/>
             <Pricing />
