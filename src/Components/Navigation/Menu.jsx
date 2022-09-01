@@ -30,7 +30,7 @@ export function Menu(props) {
           </ul>
         </div>
         <div class="text-end">
-          <button type="button" className="button2" onClick={()=> navigate('/login')}>{button}</button>
+          <button type="button" className="boutton" onClick={()=> navigate('/login')}>{button}</button>
         </div>
       </div>
     </div>

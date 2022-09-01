@@ -3,6 +3,7 @@ import './Listres.css';
 import React, { useEffect, useState } from "react";
 import instance from "../Config/axios";
 import { Menu } from "../Navigation/Menu";
+import { Footer } from "../Footer/Footer";
 
 export function Listres(){
 	const [data,setData] = useState([]);
@@ -73,6 +74,10 @@ export function Listres(){
           </div>
 		</div>
 		</div>
+		<br/>
+		<br/>
+		<br/>
+		<Footer/>
         </>
 		
 		

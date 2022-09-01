@@ -7,14 +7,13 @@
 .nav-link:hover{
     font-size: 15px;
     background-color: rgba(248, 215, 69, 0.863);
-
     border-radius: 12px 12px 12px 12px;
 }
 .navbar{
     background-color: #010b30;
 }
 
-.bouton{
+.boutton{
     border-color: rgba(248, 215, 69, 0.863);
     border-radius: 8px;
     width: 150px;
@@ -23,6 +22,7 @@
     background-color: #010b30;
 }
 
-.bouton:hover{
+.boutton:hover{
     background-color: rgba(248, 215, 69, 0.863);
+    background-color: rgba(0,0,0,0.842);
 }
